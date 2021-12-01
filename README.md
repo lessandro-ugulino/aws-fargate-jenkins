@@ -28,7 +28,7 @@ _This pipeline via automation will deploy Jenkins on a AWS Fargate also the core
 
 The below diagram shows the AWS resources.
 
-![Diagram](./img/Diagram.png)
+![Diagram](./img/diagram.png)
 
 ## Requirements
 
