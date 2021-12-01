@@ -1,0 +1,15 @@
+---
+cloudformation:
+  check_mode_override: false
+  region: ap-southeast-2
+  create_changeset: true
+  state: present
+
+Route53:
+  HostedZoneName: "ugulino.com."
+  RecordName: "jenkins.ugulino.com"
+  CertificateId: "5eaa197e"
+
+ECS:
+  ASG_MinCapacity: 1
+  ASG_MaxCapacity: 10

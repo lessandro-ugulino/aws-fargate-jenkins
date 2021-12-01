@@ -1,0 +1,16 @@
+---
+#-----Deploy CF -----
+- name: Create Cloudformation from template
+  check_mode: "{{ cloudformation.check_mode_override }}"
+  template:
+    src: deploy-jenkins.yml.j2
+    dest: /tmp/deploy-jenkins.yml
+
+- name: Submit Cloudformation template
+  cloudformation:
+    stack_name: fargate-jenkins-server
+    region: "{{ cloudformation.region }}"
+    create_changeset: "{{ cloudformation.create_changeset }}"
+    state: "{{ cloudformation.state }}"
+    validate_certs: no
+    template: /tmp/deploy-jenkins.yml
